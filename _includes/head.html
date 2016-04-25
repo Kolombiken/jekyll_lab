@@ -1,0 +1,73 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+</head>
+<script>
+
+	
+	function ToggleButtonClass(buttonElement){
+		if(buttonElement.classList.contains("button-selected")) {
+			buttonElement.classList.remove("button-selected");
+			buttonElement.classList.add("button-not-selected");
+		} else {
+			buttonElement.classList.remove("button-not-selected");
+			buttonElement.classList.add("button-selected");
+		}
+	}
+	
+	function contains(a, obj) {
+    	for (var i = 0; i < a.length; i++) {
+        	if (a[i] === obj) {
+            	return true;
+        	}
+    	}
+    	return false;
+	}
+	
+	function OpenCloseFilterList(){
+		var filterList = document.getElementById("FilterList");
+		if(filterList.style.display == 'none')
+			filterList.style.display = 'inline';
+		else
+			filterList.style.display = 'none';
+	}
+	
+	function FilterButtonClicked(id){
+		ToggleButtonClass(document.getElementById(id));
+		HandleList();
+	}
+	
+	function HandleList(){
+		var buttonList = document.getElementsByClassName("button-selected");
+		var tagList = new Array();
+		
+		for(i=0; i<buttonList.length; i++){
+			tagList.push(buttonList[i].id);
+		}
+		
+		var postList = document.getElementsByClassName("post-link");
+
+		for(i=0; i<postList.length; i++) {
+			if(tagList.length != 0 && contains(tagList, postList[i].getAttribute('data-tags'))) {
+				postList[i].parentElement.parentElement.style.display = 'none';	
+			} else {
+				postList[i].parentElement.parentElement.style.display = 'block';	
+			}
+		}
+		
+	}
+	
+	
+	
+	
+
+</script>

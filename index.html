@@ -1,0 +1,159 @@
+---
+layout: startpage
+---
+
+<div class="home">
+	
+	{% assign leads_posts = site.posts | where:"phase","leadskvalificering" %}
+	{% assign sales_posts = site.posts | where:"phase","sälj" %}
+	{% assign start_posts = site.posts | where:"phase","uppstart" %}
+	{% assign strategy_posts = site.posts | where:"phase","strategi" %}
+	{% assign behovsanalys_posts = site.posts | where:"phase","behovsanalys" %}
+  	{% assign concept_posts = site.posts | where:"phase","koncept" %}
+  	{% assign production_posts = site.posts | where:"phase","produktion" %}
+  	{% assign launch_posts = site.posts | where:"phase","lansering" %}
+  	{% assign review_posts = site.posts | where:"phase","utvärdering" %}
+  	{% assign lifecycle_posts = site.posts | where:"phase","service-lifecycle-mgmt" %}
+
+	<div class="filter">
+		<h2>Filtrera listan på kompetens&nbsp;<input type="button" id="FilterButton" class="filter-button" onclick="OpenCloseFilterList()" /></h2>
+		<div id="FilterList">
+		<ul class="filter-list">
+			<li>
+			<input type="button" id="Tech" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="Tech"/>
+			</li>
+			<li>
+			<input type="button" id="Analys" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="Analys"/>
+			</li>
+			<li>
+			<input type="button" id="UX" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="UX"/>
+			</li>
+			<li>
+			<input type="button" id="QA" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="QA"/>
+			</li>
+			<li>
+			<input type="button" id="PL" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="PL"/>
+			</li>
+			<li>
+			<input type="button" id="AM" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="AM"/>
+			</li>
+			<li>
+			<input type="button" id="Design" class="button button-not-selected" onclick="FilterButtonClicked(this.id)" value="Design"/>
+			</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="phase">
+		<h2 class="phase-heading">Leads-kvalificering</h2>
+  		<ul class="post-list">  	
+    		{% for post in leads_posts %}
+      		<li>
+        		<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+  		</ul>
+  	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Sälj</h2>
+  		<ul class="post-list">  	
+    		{% for post in sales_posts %}
+      		<li>
+        		<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+  		</ul>
+  	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Uppstart</h2>
+  		<ul class="post-list">  	
+    		{% for post in start_posts %}
+      		<li>
+        		<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+  		</ul>
+  	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Strategi</h2>
+  		<ul class="post-list">  	
+    		{% for post in strategy_posts %}
+      		<li>
+        		<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+  		</ul>
+  	</div>
+  	
+	<div class="phase">
+		<h2 class="phase-heading">Behovsanalys</h2>
+  		<ul class="post-list">  	
+    		{% for post in behovsanalys_posts %}
+      		<li>
+        		<h3><a class="post-link" data-tags="{{ words	 }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+  		</ul>
+  	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Koncept</h2>
+		<ul class="post-list">  	
+			{% for post in concept_posts %}
+			<li>
+				<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Produktion</h2>
+		<ul class="post-list">  	
+			{% for post in production_posts %}
+			<li>
+				<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+  	
+  	<div class="phase">
+		<h2 class="phase-heading">Lansering</h2>
+		<ul class="post-list">  	
+			{% for post in launch_posts %}
+			<li>
+				<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="phase">
+		<h2 class="phase-heading">Utvärdering</h2>
+		<ul class="post-list">  	
+			{% for post in review_posts %}
+			<li>
+				<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="phase">
+		<h2 class="phase-heading">Service lifecycle mgmt</h2>
+		<ul class="post-list">  	
+			{% for post in lifecycle_posts %}
+			<li>
+				<h3><a class="post-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div style="clear: left"/>
+	
+</div>
