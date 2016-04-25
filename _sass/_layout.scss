@@ -241,7 +241,7 @@
 .phase {
 	float: left;
 	width: 120px;
-	background: url("http://localhost:4000/line.png") no-repeat;
+	background: url("/line.png") no-repeat;
 	display: inline-block;
 	padding-top: 25px;
 	
@@ -299,7 +299,7 @@ h2.phase-heading {
 	width: 24px; 
     height: 24px;
     text-decoration: none;
-	background: url("http://localhost:4000/menu.png") no-repeat;
+	background: url("/menu.png") no-repeat;
 }
 
 .button-not-selected {
