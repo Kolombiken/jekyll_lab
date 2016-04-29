@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Teknisk vision/Tekniska mål"
+title:  Teknisk vision/Tekniska mål
 date:   2016-04-08 14:16:42
 categories: jekyll update
 phase: strategi

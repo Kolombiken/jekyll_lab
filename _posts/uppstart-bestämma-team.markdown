@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Effektkarta"
+title:  Bestämma team
 date:   2016-04-08 14:16:42
 categories: jekyll update
-phase: strategi
+phase: uppstart
 sort-index: 3
 tags: [Tech]
 owner: Pär Stigenberg

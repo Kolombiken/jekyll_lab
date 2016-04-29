@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Digitalt råd"
+title:  KPI-workshop
 date:   2016-04-08 14:16:42
 categories: jekyll update
-phase: service-lifecycle-mgmt
+phase: koncept
 sort-index: 2
-tags: [QA]
+tags: [Tech]
 owner: Pär Stigenberg
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.

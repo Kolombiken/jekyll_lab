@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Uppföljning KPI-strategi"
+title:  Effektkarta
 date:   2016-04-08 14:16:42
 categories: jekyll update
-phase: service-lifecycle-mgmt
+phase: strategi
 sort-index: 3
 tags: [Tech]
 owner: Pär Stigenberg

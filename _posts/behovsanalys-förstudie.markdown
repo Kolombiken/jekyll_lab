@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Förstudie v3
+title:  Förstudie
 date:   2016-04-08 14:16:42
 categories: jekyll update
 phase: behovsanalys

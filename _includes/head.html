@@ -15,12 +15,12 @@
 
 	
 	function ToggleButtonClass(buttonElement){
-		if(buttonElement.classList.contains("button-selected")) {
-			buttonElement.classList.remove("button-selected");
-			buttonElement.classList.add("button-not-selected");
+		if(buttonElement.classList.contains("filter-button-selected")) {
+			buttonElement.classList.remove("filter-button-selected");
+			buttonElement.classList.add("filter-button-not-selected");
 		} else {
-			buttonElement.classList.remove("button-not-selected");
-			buttonElement.classList.add("button-selected");
+			buttonElement.classList.remove("filter-button-not-selected");
+			buttonElement.classList.add("filter-button-selected");
 		}
 	}
 	
@@ -34,7 +34,7 @@
 	}
 	
 	function OpenCloseFilterList(){
-		var filterList = document.getElementById("FilterList");
+		var filterList = document.getElementById("Filter");
 		if(filterList.style.display == 'none')
 			filterList.style.display = 'inline';
 		else
@@ -47,14 +47,14 @@
 	}
 	
 	function HandleList(){
-		var buttonList = document.getElementsByClassName("button-selected");
+		var buttonList = document.getElementsByClassName("filter-button-selected");
 		var tagList = new Array();
 		
 		for(i=0; i<buttonList.length; i++){
 			tagList.push(buttonList[i].id);
 		}
 		
-		var postList = document.getElementsByClassName("post-link");
+		var postList = document.getElementsByClassName("article-link");
 
 		for(i=0; i<postList.length; i++) {
 			if(tagList.length != 0 && contains(tagList, postList[i].getAttribute('data-tags'))) {

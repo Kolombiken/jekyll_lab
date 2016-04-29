@@ -9,3 +9,6 @@ github_username:  none
 
 # Build settings
 markdown: kramdown
+
+permalink: /:categories/:title
+

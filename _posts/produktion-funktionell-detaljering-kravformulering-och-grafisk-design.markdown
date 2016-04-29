@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Innehållsstrategi"
+title:  Funktionell detaljering/kravformulering och grafisk design
 date:   2016-04-08 14:16:42
 categories: jekyll update
-phase: strategi
-sort-index: 2
-tags: [UX]
+phase: produktion
+sort-index: 1
+tags: [QA]
 owner: Pär Stigenberg
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
