@@ -8,7 +8,7 @@ layout: startpage
 	{% assign sales_posts = site.posts | where:"phase","sälj" %}
 	{% assign start_posts = site.posts | where:"phase","uppstart" %}
 	{% assign strategy_posts = site.posts | where:"phase","strategi" %}
-	{% assign behovsanalys_posts = site.posts | where:"phase","behovsanalys" %}
+	{% assign explore_posts = site.posts | where:"phase","utforska" %}
   	{% assign concept_posts = site.posts | where:"phase","koncept" %}
   	{% assign production_posts = site.posts | where:"phase","produktion" %}
   	{% assign launch_posts = site.posts | where:"phase","lansering" %}
@@ -89,10 +89,10 @@ layout: startpage
 		</div>
 		<div class="phase">
 			<div class="inner-top-style-div"></div>
-			<h2 class="phase-heading icon-s">Strategi</h2>
+			<h2 class="phase-heading icon-s">Utforska</h2>
 			<div class="article-list-wrapper">
 			<ul class="article-list">  	
-				{% for post in strategy_posts %}
+				{% for post in explore_posts %}
 				<li>
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 				</li>
@@ -103,10 +103,10 @@ layout: startpage
 		</div>
 		<div class="phase">
 			<div class="inner-top-style-div"></div>
-			<h2 class="phase-heading icon-b">Behovsanalys</h2>
+			<h2 class="phase-heading icon-b">Strategi</h2>
 			<div class="article-list-wrapper">
 			<ul class="article-list">  	
-				{% for post in behovsanalys_posts %}
+				{% for post in strategy_posts %}
 				<li>
 					<h3><a class="article-link" data-tags="{{ words	 }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 				</li>
