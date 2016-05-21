@@ -1,49 +1,18 @@
 ---
 layout: startpage
 ---
-
+{% assign leads_posts = site.categories.leads-qualifying | sort:"sortindex" %}
+{% assign sales_posts = site.categories.sales | sort:"sortindex" %}
+{% assign start_posts = site.categories.start | sort:"sortindex" %}
+{% assign explore_posts = site.categories.explore | sort:"sortindex" %}
+{% assign strategy_posts = site.categories.strategy | sort:"sortindex" %}
+{% assign concept_posts = site.categories.concept | sort:"sortindex" %}
+{% assign production_posts = site.categories.production | sort:"sortindex" %}
+{% assign review_posts = site.categories.review | sort:"sortindex" %}
+{% assign launch_posts = site.categories.launch | sort:"sortindex" %}
+{% assign lifecycle_posts = site.categories.service-lifecycle-mgmt | sort:"sortindex" %}
+    
 <div class="home">
-	
-	{% assign leads_posts = site.posts | where:"phase","leadskvalificering" %}
-	{% assign sales_posts = site.posts | where:"phase","sälj" %}
-	{% assign start_posts = site.posts | where:"phase","uppstart" %}
-	{% assign strategy_posts = site.posts | where:"phase","strategi" %}
-	{% assign explore_posts = site.posts | where:"phase","utforska" %}
-  	{% assign concept_posts = site.posts | where:"phase","koncept" %}
-  	{% assign production_posts = site.posts | where:"phase","produktion" %}
-  	{% assign launch_posts = site.posts | where:"phase","lansering" %}
-  	{% assign review_posts = site.posts | where:"phase","utvärdering" %}
-  	{% assign lifecycle_posts = site.posts | where:"phase","service-lifecycle-mgmt" %}
-
-	<!--
-	<div class="filter">
-		<h2>Filtrera listan på kompetens&nbsp;<input type="button" id="FilterMenueButton" class="filter-menu-button" onclick="OpenCloseFilterList()" /></h2>
-		<ul  id="FilterList" class="filter-list">
-			<li>
-			<input type="button" id="Tech" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="Tech"/>
-			</li>
-			<li>
-			<input type="button" id="Analys" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="Analys"/>
-			</li>
-			<li>
-			<input type="button" id="UX" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="UX"/>
-			</li>
-			<li>
-			<input type="button" id="QA" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="QA"/>
-			</li>
-			<li>
-			<input type="button" id="PL" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="PL"/>
-			</li>
-			<li>
-			<input type="button" id="AM" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="AM"/>
-			</li>
-			<li>
-			<input type="button" id="Design" class="filter-button filter-button-not-selected" onclick="FilterButtonClicked(this.id)" value="Design"/>
-			</li>
-		</ul>
-	</div>
-	-->
-
 	<div class="phase-wrapper">
 		<div class="phase">
 			<div class="inner-top-style-div"></div>
@@ -52,7 +21,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in leads_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -66,7 +39,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in sales_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -80,7 +57,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in start_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -94,7 +75,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in explore_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -108,7 +93,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in strategy_posts %}
 				<li>
-					<h3><a class="article-link" data-tags="{{ words	 }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% if post.draft == false %}
+					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -122,7 +111,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in concept_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -136,7 +129,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in production_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -150,7 +147,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in launch_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -164,7 +165,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in review_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>
@@ -178,7 +183,11 @@ layout: startpage
 			<ul class="article-list">  	
 				{% for post in lifecycle_posts %}
 				<li>
+					{% if post.draft == false %}
 					<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% else %}
+					<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					{% endif %}
 				</li>
 				{% endfor %}
 			</ul>

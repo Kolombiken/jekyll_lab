@@ -183,6 +183,12 @@
     padding-left: 5px;
 }
 
+.article-link-inactive {
+	pointer-events: none;
+	cursor: default;
+	color: #bdbec6;
+}
+
 /**
  * Filter
  */
