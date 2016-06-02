@@ -13,6 +13,9 @@
 </head>
 <script>
 
+	$('document').ready(function(){
+		CheckContainerSize();
+	});
 	
 	function ToggleButtonClass(buttonElement){
 		if(buttonElement.classList.contains("filter-button-selected")) {
@@ -64,6 +67,17 @@
 			}
 		}
 		
+	}
+	
+	function CheckContainerSize(){
+    	var containers = document.getElementsByClassName("article-list-wrapper");
+    	for(i=0; i<containers.length; i++){
+    		if(containers[i].scrollHeight > 244){
+    			if(!containers[i].classList.contains("article-list-overflowing")) {
+    				containers[i].classList.add("article-list-overflowing");	
+    			}
+    		}
+		}
 	}
 	
 	

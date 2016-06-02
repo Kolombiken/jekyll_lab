@@ -1,0 +1,21 @@
+---
+layout: startpage
+---
+{% assign posts = site.posts | sort:"title" %}
+    
+<div class="home">
+	<h2 class="alphabetic-list-heading">Alfabetisk lista av artiklar</h2>
+	<div class="alphabetic-list">
+	<ul class="article-list">  	
+		{% for post in posts %}
+		<li>
+			{% if post.draft == false %}
+			<h3><a class="article-link" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			{% else %}
+			<h3><a class="article-link article-link-inactive" data-tags="{{ post.tags }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+	</div>
+</div>
