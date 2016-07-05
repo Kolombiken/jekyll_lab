@@ -1,0 +1,16 @@
+# Site settings
+title: Creuna - Way of working
+email: par.stigenberg@creuna.se 
+description: The goal for Creuna way of working is to create a common set od tools that helps everyone on Creuna to spend more time delivering value for our ourself and for our customers.
+baseurl: "" # the subpath of your site, e.g. /blog/
+
+url: "http://sto-wow01.co.int" # the base hostname & protocol for your site
+
+twitter_username: none
+github_username:  none
+
+# Build settings
+markdown: kramdown
+
+permalink: /:categories/:title
+

@@ -1,0 +1,20 @@
+{% include head.html %}
+
+<script>
+
+	$('document').ready(function(){
+		CheckContainerSize();
+	});
+	
+	
+	function CheckContainerSize(){
+    	var containers = document.getElementsByClassName("article-list-wrapper");
+    	for(i=0; i<containers.length; i++){
+    		if(containers[i].scrollHeight > 250){
+    			if(!containers[i].classList.contains("article-list-overflowing")) {
+    				containers[i].classList.add("article-list-overflowing");	
+    			}
+    		}
+		}
+	}
+</script>
