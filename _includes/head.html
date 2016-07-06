@@ -49,20 +49,28 @@
 		var buttonList = document.getElementsByClassName("filter-button-selected");
 		var tagList = new Array();
 		
-		for(i=0; i<buttonList.length; i++){
+		for(i=0; i<buttonList.length; i++) {
 			tagList.push(buttonList[i].id);
 		}
 		
 		var postList = document.getElementsByClassName("article-link");
 
-		for(i=0; i<postList.length; i++) {
-			if(tagList.length != 0 && contains(tagList, postList[i].getAttribute('data-tags'))) {
-				postList[i].parentElement.parentElement.style.display = 'none';	
-			} else {
-				postList[i].parentElement.parentElement.style.display = 'block';	
-			}
-		}
+		var visible = false;
 		
+		for(i=0; i<postList.length; i++) {
+			visible = true;
+			if(tagList.length > 0 && postList[i].getAttribute('data-tags') != 'All') {
+				for(j=0; j<tagList.length; j++) {		
+					if(postList[i].getAttribute('data-tags').indexOf(tagList[j]) == -1){
+						visible = false;					}							
+				}
+			
+			}	
+			if(visible == true) {
+				postList[i].parentElement.parentElement.style.display = 'block';
+			} else {
+				postList[i].parentElement.parentElement.style.display = 'none';	
+			}	
+		}
 	}
-	
 </script>
